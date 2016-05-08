@@ -25,6 +25,9 @@ module.exports = {
   module: {
     loaders: [
       { test: /\.jsx?$/, loaders: ['react-hot', 'babel-loader'], exclude: /node_modules/ }
+    ],
+    preLoaders: [
+      { test: /\jsx?$/, loader: 'eslint-loader', exclude: /(node_modules|server)/ }
     ]
   }
 }

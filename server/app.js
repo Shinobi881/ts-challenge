@@ -1,7 +1,6 @@
 const http = require('http');
 const express = require('express');
 const morgan = require('morgan');
-const path = require('path');
 const bodyParser = require('body-parser');
 const cors = require('cors');
 
@@ -9,7 +8,7 @@ const db = require('./datastore.js');
 
 const app = express();
 
-const production = process.env.NODE_ENV === 'production'
+const production = process.env.NODE_ENV === 'production';
 
 app.set('port', process.env.PORT || 3333);
 app.use(express.static('public'));
@@ -22,13 +21,14 @@ app.use(cors());
  * *************************************************************************/
 
 if (!production) {
-  var webpack = require('webpack');
-  var webpackDevMiddleware = require('webpack-dev-middleware');
-  var webpackHotMiddleware = require('webpack-hot-middleware');
-  var config = require('../webpack.config');
-  var compiler = webpack(config);
+  let webpack = require('webpack');
+  let webpackDevMiddleware = require('webpack-dev-middleware');
+  let webpackHotMiddleware = require('webpack-hot-middleware');
+  let config = require('../webpack.config');
+  let compiler = webpack(config);
 
   app.use(webpackDevMiddleware(compiler, {
+    noInfo: true,
     hot: true,
     filename: 'bundle.js',
     publicPath: config.output.publicPath,
@@ -71,17 +71,15 @@ app.delete('/reports/:id', (req, res) => {
   res.send(db.remove(req.params.id));
 });
 
-
-
 // 404
-app.use((req, res, next) => {
+app.use((req, res) => {
   res.status(404).send({
     message: `Yay! The API is running but there is nothing at ${req.url}`,
   });
 });
 
 // 5xx
-app.use((err, req, res, next) => {
+app.use((err, req, res) => {
   res.status(500).send({ message: 'Server Error. Check our console logs.' });
 });
 

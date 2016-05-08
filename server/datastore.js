@@ -6,7 +6,7 @@ const faker = require('faker');
 
 const data = Object.create(null);
 
-const fixtures = []
+const fixtures = [];
 
 for (let i = 0; i < 10; i++) {
   let past = faker.date.past();

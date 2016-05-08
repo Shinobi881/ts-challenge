@@ -1,6 +1,7 @@
 const http = require('http');
 const express = require('express');
 const morgan = require('morgan');
+const path = require('path');
 const bodyParser = require('body-parser');
 const cors = require('cors');
 
@@ -17,9 +18,38 @@ app.use(bodyParser.json());
 app.use(cors());
 
 /* **************************************************************************
+ * WEBPACK HMR
+ * *************************************************************************/
+
+if (!production) {
+  var webpack = require('webpack');
+  var webpackDevMiddleware = require('webpack-dev-middleware');
+  var webpackHotMiddleware = require('webpack-hot-middleware');
+  var config = require('../webpack.config');
+  var compiler = webpack(config);
+
+  app.use(webpackDevMiddleware(compiler, {
+    hot: true,
+    filename: 'bundle.js',
+    publicPath: config.output.publicPath,
+    stats: {
+      colors: true
+    },
+    historyApiFallback: true
+  }));
+
+  app.use(webpackHotMiddleware(compiler, {
+    log: console.log,
+    path: '/__webpack_hmr',
+    heartbeat: 10 * 1000
+  }));
+}
+
+
+/* **************************************************************************
  * API
  * *************************************************************************/
-const port = app.get('port');
+
 
 app.get('/reports', (req, res) => {
   res.send(db.fetchAll());
@@ -57,8 +87,6 @@ app.use((err, req, res, next) => {
 
 const server = http.createServer(app);
 
-server.listen(port, () => {
-  console.log(`Server listening at localhost:${port}...`);
+server.listen(app.get('port'), () => {
+  console.log(`Server listening at localhost:${app.get('port')}...`);
 });
-
-// app.listen(port, () =>)

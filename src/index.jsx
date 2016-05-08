@@ -4,7 +4,10 @@ import axios from 'axios';
 axios.get('/reports')
   .then((res) => {
     console.log('Logging response', res);
+    // console.log('this works')
   })
+
+console.log('test')
 class App extends Component {
   render() {
     return (

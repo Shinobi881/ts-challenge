@@ -1,0 +1,37 @@
+{
+  "name": "front-end-coding-excercise",
+  "version": "0.1.0",
+  "description": "This is the coding exercise we give to all potential front-end team members. It consists of a few parts. Instructions are below.",
+  "main": "index.js",
+  "dependencies": {
+    "body-parser": "^1.15.0",
+    "cors": "^2.7.1",
+    "express": "^4.13.4",
+    "faker": "^3.1.0",
+    "lodash": "^4.11.2",
+    "morgan": "^1.7.0",
+    "node-uuid": "^1.4.7"
+  },
+  "devDependencies": {
+    "eslint": "^2.9.0",
+    "eslint-config-airbnb-base": "^2.0.0",
+    "eslint-plugin-import": "^1.6.1",
+    "nodemon": "^1.9.2"
+  },
+  "scripts": {
+    "start": "node server/app.js",
+    "mon": "nodemon server/app.js",
+    "lint": "eslint server",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/trustar/front-end-coding-excercise.git"
+  },
+  "author": "Ian Sinnott <ian@trustar.co>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/trustar/front-end-coding-excercise/issues"
+  },
+  "homepage": "https://github.com/trustar/front-end-coding-excercise#readme"
+}

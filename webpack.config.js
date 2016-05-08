@@ -1,0 +1,26 @@
+const webpack = require('webpack');
+const path = require('path');
+
+module.exports = {
+  context: __dirname,
+  entry: './src/entry.jsx',
+  output: {
+    path: path.join(__dirname, '/public'),
+    filename: 'bundle.js',
+    publicPath: '/public/'
+  },
+  resolve: {
+    extensions: ['', '.js', '.jsx', '.json']
+  },
+  devtool: 'source-map',
+  plugins: [
+    new webpack.optimize.OccurenceOrderPlugin(),
+    new webpack.HotModuleReplacementPlugin(),
+    new webpack.NoErrorsPlugin()
+  ],
+  module: {
+    loaders: [
+      { test: /\.jsx?$/, loaders: ['react-hot', 'babel-loader'], exclude: /node_modules/ }
+    ]
+  }
+}

@@ -8,8 +8,10 @@ const db = require('./datastore.js');
 
 const app = express();
 
+const production = process.env.NODE_ENV === 'production'
+
 app.set('port', process.env.PORT || 3333);
-app.use(express.static('public', { index: false }));
+app.use(express.static('public'));
 app.use(morgan(process.env.NODE_ENV === 'development' ? 'dev' : 'combined'));
 app.use(bodyParser.json());
 app.use(cors());
@@ -17,6 +19,7 @@ app.use(cors());
 /* **************************************************************************
  * API
  * *************************************************************************/
+const port = app.get('port');
 
 app.get('/reports', (req, res) => {
   res.send(db.fetchAll());
@@ -38,6 +41,8 @@ app.delete('/reports/:id', (req, res) => {
   res.send(db.remove(req.params.id));
 });
 
+
+
 // 404
 app.use((req, res, next) => {
   res.status(404).send({
@@ -52,6 +57,8 @@ app.use((err, req, res, next) => {
 
 const server = http.createServer(app);
 
-server.listen(app.get('port'), () => {
-  console.log(`Server listening at localhost:${app.get('port')}...`);
+server.listen(port, () => {
+  console.log(`Server listening at localhost:${port}...`);
 });
+
+// app.listen(port, () =>)

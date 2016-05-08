@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
+import SideBar from './containers/sidebar.jsx';
 
 axios.get('/reports')
   .then((res) => {
@@ -10,7 +11,7 @@ class App extends Component {
   render() {
     return (
       <div>
-        <h1>Testing 123</h1>
+        <SideBar />
       </div>
     );
   }

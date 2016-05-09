@@ -5,12 +5,16 @@ class ReportDetail extends Component {
     super(props);
     this.state = { data: '' };
   }
+  componentWillMount() {
+    this.forceUpdate();
+  }
   renderDetails() {
-    let detail = this.props.reportDetail;
+    // console.log(this.props);
+    let detail = this.props.activeReport;
 
-    if (!this.props.reportDetail) {
-      return <div><h1>No Report Selected</h1></div>;
-    }
+    // if (!this.props.reportDetail) {
+    //   return <div><h1>No Report Selected</h1></div>;
+    // }
 
     return (
       <div>

@@ -1,0 +1,5 @@
+export const INITIAL_STATE = 'INITIAL_STATE';
+export const FILTER_REPORTS = 'FILTER_REPORTS';
+export const FETCH_REPORTS = 'FETCH_REPORTS';
+export const REPORTS_READY = 'EVENTS_READY';
+export const SELECT_REPORT = 'SELECT_REPORT';

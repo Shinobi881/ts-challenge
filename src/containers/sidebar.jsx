@@ -9,10 +9,11 @@ class SideBar extends Component {
     this.state = { reportDetail: null };
   }
   renderReports() {
-    let reports = this.props.reports;
+    // console.log(this.props);
+    let reports = this.props.allReports;
 
     return reports.map((reportData, index) => (
-      <Report key={index} {...reportData} />
+      <Report key={index} ref={`report${index}`} {...reportData} />
     ));
   }
   render() {

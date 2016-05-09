@@ -1,28 +1,24 @@
 import React, { Component } from 'react';
-import reports from '../../data';
+import _ from 'lodash';
+// import reports from '../../data';
 
 class SideBar extends Component {
-  constructor() {
-    super();
-    this.state = { reports };
+  constructor(props) {
+    super(props);
+    this.state = { data: '' };
   }
   renderReports() {
-    return this.state.reports.map((report, index) => (
-      <div className='report' key={index}>
-        <h3>{report.title}</h3>
-      </div>
+    console.log(this.props);
+    return _.map(this.props, (report, index) => (
+      <li className='report' key={index}><h3>{report.title}</h3></li>
     ));
   }
   render() {
-    console.log(reports);
     return (
-      <div>
-        <div className='report-list'>
+      <div id="side-bar">
+        <ul className='report-list'>
           {this.renderReports()}
-        </div>
-        <div className='report-detail'>
-          <p>Report Detail</p>
-        </div>
+        </ul>
       </div>
     );
   }

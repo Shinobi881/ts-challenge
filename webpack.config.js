@@ -1,5 +1,6 @@
 const webpack = require('webpack');
 const path = require('path');
+const autoprefixer = require('autoprefixer');
 
 
 module.exports = {
@@ -25,10 +26,18 @@ module.exports = {
   module: {
     loaders: [
       { test: /\.jsx?$/, loaders: ['react-hot', 'babel-loader'], exclude: /node_modules/ },
-      { test: /\.json$/, loader: 'json-loader' }
+      { test: /\.json$/, loader: 'json-loader' },
+      { test: /\.scss$/, loaders: ['style', 'css', 'sass'] },
+      { test: /\.css$/, loader: 'style-loader!css-loader' }
+      
     ],
     preLoaders: [
       { test: /\jsx?$/, loader: 'eslint-loader', exclude: /(node_modules|server)/ }
     ]
+  },
+  postcss: function (webpack) {
+    return [
+      autoprefixer({browsers: ['last 2 versions', 'ie >= 9', 'and_chr >= 2.3']})
+    ];
   }
 }

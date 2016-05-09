@@ -16,7 +16,7 @@ class SideBar extends Component {
   render() {
     return (
       <div id="side-bar">
-        <ul className='report-list'>
+        <ul id='report-list'>
           {this.renderReports()}
         </ul>
       </div>

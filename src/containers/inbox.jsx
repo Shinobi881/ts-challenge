@@ -7,7 +7,7 @@ import reports from '../../data';
 class Inbox extends Component {
   constructor() {
     super();
-    this.state = { reports };
+    this.state = { reportDetail: reports[0], reports };
   }
   render() {
     return (
@@ -15,7 +15,7 @@ class Inbox extends Component {
         <TopBar />
         <div id="content">
           <SideBar {...this.state.reports} />
-          <ReportDetail {...this.state.reports} />
+          <ReportDetail {...this.state} />
         </div>
       </div>
     );

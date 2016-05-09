@@ -1,13 +1,32 @@
 import React, { Component } from 'react';
 
 class ReportDetail extends Component {
-  constructor(report) {
-    super(report);
+  constructor(props) {
+    super(props);
     this.state = { data: '' };
   }
-  render() {
+  renderDetails() {
+    let detail = this.props.reportDetail;
+
+    if (!this.props.reportDetail) {
+      return <div><h1>No Report Selected</h1></div>;
+    }
+
     return (
-      <div id="report-detail"><h1>This works</h1></div>
+      <div>
+        <div>
+          <h1>{detail.title}</h1>
+        </div>
+        <div>
+          <p>{detail.body}</p>
+        </div>
+      </div>
+    );
+  }
+  render() {
+    console.log('Props in detail', this.props);
+    return (
+      <div id="report-detail">{this.renderDetails()}</div>
     );
   }
 }

@@ -14,7 +14,7 @@ class Inbox extends Component {
       <div id='inbox'>
         <TopBar />
         <div id="content">
-          <SideBar {...this.state.reports} />
+          <SideBar {...this.state} />
           <ReportDetail {...this.state} />
         </div>
       </div>

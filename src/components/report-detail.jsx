@@ -24,7 +24,6 @@ class ReportDetail extends Component {
     );
   }
   render() {
-    console.log('Props in detail', this.props);
     return (
       <div id="report-detail">{this.renderDetails()}</div>
     );

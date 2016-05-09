@@ -7,15 +7,15 @@ import reports from '../../data';
 class Inbox extends Component {
   constructor() {
     super();
-    this.state = { reports };
+    this.state = { reportDetail: reports[0], reports };
   }
   render() {
     return (
       <div id='inbox'>
         <TopBar />
         <div id="content">
-          <SideBar {...this.state.reports} />
-          <ReportDetail {...this.state.reports} />
+          <SideBar {...this.state} />
+          <ReportDetail {...this.state} />
         </div>
       </div>
     );

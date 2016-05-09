@@ -2,11 +2,10 @@ const webpack = require('webpack');
 const path = require('path');
 const autoprefixer = require('autoprefixer');
 
-
 module.exports = {
   context: __dirname,
   entry: [
-    'webpack-hot-middleware/client?path=/__webpack_hmr&timeout=20000?reload=true',
+    'webpack-hot-middleware/client?path=/__webpack_hmr&timeout=20000',
     './src/entry.jsx'
   ],
   output: {

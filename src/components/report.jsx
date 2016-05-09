@@ -7,7 +7,7 @@ class Report extends Component {
     // this.handleClick = this.handleClick.bind(this);
   }
   handleClick() {
-    console.log('I\'m clicked: ', this);
+    console.log('I\'m clicked: ', this.props);
   }
   render() {
     return (

@@ -10,6 +10,10 @@ class Inbox extends Component {
     super(props);
     this.state = { reportDetail: reports[0], reports };
   }
+  componentWillMount() {
+    // console.log(this.props);
+    this.props.getInitialState();
+  }
   render() {
     return (
       <div id='inbox'>

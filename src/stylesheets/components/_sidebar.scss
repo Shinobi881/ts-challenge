@@ -1,14 +1,16 @@
 #side-bar {
-  display: flex;
+  // display: flex;
   bottom: 0;
   width: 20%;
   height: 90%;
   border-right-style: solid;
   border-color: black;
+  overflow: scroll;
 }
 
 #report-list {
   margin: 0;
   padding: 0;    
   background-color: #f1f1f1;
+  overflow: scroll;
 }

@@ -11,7 +11,7 @@ const app = express();
 const production = process.env.NODE_ENV === 'production';
 
 app.set('port', process.env.PORT || 3333);
-app.use(express.static('public'));
+app.use(express.static('public/'));
 app.use(morgan(process.env.NODE_ENV === 'development' ? 'dev' : 'combined'));
 app.use(bodyParser.json());
 app.use(cors());

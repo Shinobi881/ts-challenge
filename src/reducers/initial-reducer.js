@@ -1,8 +1,8 @@
 import { INITIAL_STATE } from '../actions/action_types';
-import data from '../../data.json';
+// import data from '../../data.json';
 
 const initialState = {
-  allReports: data,
+  // allReports: data,
   filteredReports: [],
   filterQuery: '',
   activeReport: {

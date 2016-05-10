@@ -1,17 +1,21 @@
-import { FETCH_EVENTS } from '../actions/action_types';
+import { FETCH_REPORTS } from '../actions/action-types';
 
-const fetchReducer = (state = {}, action) => {
+const initialState = [
+  {
+    title: 'No reports to show',
+    body: 'please click on a report to display'
+  }
+];
+
+const fetchReducer = (state = initialState, action) => {
   switch (action.type) {
-    case FETCH_EVENTS:
-      // console.log(action.type);
-      let payload = action.payload;
-
-      return {
-        searchQuery: '',
-        allEvents: payload.data,
-        searchedEvents: payload.data
+    case FETCH_REPORTS:
+      let checkFetch = () => {
+        return action.payload.length > 0 ? action.payload : state;
       };
+      let newState = Object.assign([], checkFetch());
 
+      return newState;
     default:
       return state;
   }

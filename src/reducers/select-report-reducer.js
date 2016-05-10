@@ -1,9 +1,9 @@
-import { INITIAL_STATE, SELECT_REPORT } from '../actions/action_types';
+import { INITIAL_STATE, SELECT_REPORT } from '../actions/action-types';
 
 const initialState = {
   activeReport: {
     title: 'No report selected',
-    body: ''
+    body: 'please click on a report'
   }
 };
 

@@ -1,4 +1,4 @@
-import { FILTER_REPORTS } from '../actions/action_types';
+import { FILTER_REPORTS } from '../actions/action-types';
 
 const initialState = {
   filterQuery: ''

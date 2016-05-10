@@ -1,13 +1,13 @@
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import * as actions from '../actions';
+import axios from 'axios';
 import Data from '../../data.json';
 
 // Redux props and action connectors
 const mapStateToProps = (state) => {
-  // console.log('State from store: ', state);
   return {
-    allReports: Data,
+    allReports: state.fetchReducer,
     filteredReports: state.filterReducer.filteredReports,
     filterQuery: state.filterReducer,
     activeReport: state.reportReducer.activeReport

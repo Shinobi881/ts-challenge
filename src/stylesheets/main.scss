@@ -1,11 +1,22 @@
+body {
+  max-width: 100%;
+  max-height: 100%;
+  overflow: hidden;
+}
+
 #app {
   // @import 'foundation-sites/scss/foundation';
   // // include all modules from foundation
   // @include foundation-everything;
   @import 'components/all';
   @import 'containers/all';
-  background-color: gray;
-  width: 1280px;
-  height: 1020px;
+  background: gray;
+  max-width: 100%;
+  max-height: 100%;
+  overflow: hidden;
+  margin-top: 6%;
+  margin-bottom: 8%;
+  margin-right: 15%;
+  margin-left: 15%;
 }
 

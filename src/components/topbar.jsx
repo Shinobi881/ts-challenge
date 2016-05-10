@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Filter from '../components/filter.jsx';
 
 class TopBar extends Component {
   render() {
@@ -10,6 +11,7 @@ class TopBar extends Component {
           <a href="/js/">JavaScript</a> |
           <a href="/jquery/">jQuery</a>
         </nav>
+        <Filter />
       </div>
     );
   }

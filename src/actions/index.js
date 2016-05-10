@@ -4,8 +4,8 @@ export const fetchReportsAction = () => {
   return { type: FETCH_REPORTS };
 };
 
-export const filterReportsAction = (query, state) => {
-  return { type: FILTER_REPORTS, payload: { query, state } };
+export const filterReportsAction = (state, query) => {
+  return { type: FILTER_REPORTS, payload: state, query };
 };
 
 export const selectReportAction = (report) => {

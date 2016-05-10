@@ -9,11 +9,9 @@ class Filter extends Component {
   handleChange(event) {
     let query = event.target.value;
     let state = this.props;
-    // console.log('Filter: ', event.target.value);
     this.props.filterReportsAction(state, query);
   }
   render() {
-    // console.log(this.props);
     return (
       <div id='filter'>
         <form>

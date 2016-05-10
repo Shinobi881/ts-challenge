@@ -1,4 +1,4 @@
-import { FETCH_REPORTS, FILTER_REPORTS, SELECT_REPORT, INITIAL_STATE } from './action_types';
+import { FETCH_REPORTS, FILTER_REPORTS, SELECT_REPORT, INITIAL_STATE } from './action-types';
 import axios from 'axios';
 
 export const fetchReportsAction = () => {

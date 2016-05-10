@@ -11,9 +11,6 @@ class Inbox extends Component {
   componentWillMount() {
     this.props.fetchReportsAction();
   }
-  componentDidMount() {
-    console.log(this.props);
-  }
   render() {
     return (
       <div id='inbox'>

@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
 import { connector } from '../store/store';
 
+// Only built for testing connection to Redux store
+// Import to App for use
 class Test extends Component {
   constructor(props) {
     super(props);
-    this.state = { data: '' };
   }
   render() {
     console.log('TEST: ', this.props);

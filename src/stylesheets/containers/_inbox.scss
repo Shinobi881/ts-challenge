@@ -1,24 +1,26 @@
 #inbox {
-  height: 800px;
-  max-width: 100%;
-  background-color: gray;
-}
-
-#content {
-  // max-width: 100%;
+  // height: 100vh;
+  width: 100vw;
   // max-height: 100%;
-  
-  background-color: red;
-  z-index: 1000;
-}
-
-#inbox {
-  
+  // max-width: 100%;
+  // margin-top: 60px;
+  // background-color: gray;
+  overflow: hidden;
 }
 
 #content {
-  height: 100%;
-  width: 100%;
+  height: 90%;
+  max-width: 100%;
   display: flex;
-  overflow: scroll;
+  position: fixed;
+
+  overflow: hidden;
 }
+
+// #content {
+//   background-color: red;
+//   max-width: 100%;
+
+//   // overflow: scroll;
+//   // z-index: 1000;
+// }

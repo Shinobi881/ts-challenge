@@ -1,16 +1,17 @@
 #side-bar {
   // display: flex;
+  display: flex;
+  flex-basis: 30%;
   bottom: 0;
-  width: 20%;
-  height: 100%;
+  top: 0;
+  height: 85vh;
   border-right-style: solid;
   border-color: black;
-  overflow: scroll;
+  // box-sizing: border-top;
+  overflow: hidden;
+  // overflow: auto;
 }
 
-#report-list {
-  margin: 0;
-  padding: 0;    
-  background-color: #f1f1f1;
-  overflow: scroll;
-}
+// #side-bar:last-child {
+//   padding-bottom: 100px;
+// }

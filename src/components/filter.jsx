@@ -15,12 +15,13 @@ class Filter extends Component {
     return (
       <div id='filter'>
         <form>
-          <span id='filter-label'>Filter: </span>
+        <div id='filter-container'>
           <input
             id='filter-form'
-            placeholder='filter your reports'
+            placeholder='Filter...'
             onChange={this.handleChange}
           />
+        </div>
         </form>
       </div>
     );

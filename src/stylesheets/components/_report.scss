@@ -1,7 +1,8 @@
 .report {
-  display: flex;
+  min-height: 50px;
   color: #000;
-  border-top-style: solid;
+  padding: 3px;
+  border-bottom: solid #f2f2f2 2px;
 }
 
 .report.active {

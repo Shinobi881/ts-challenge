@@ -9,7 +9,7 @@ class ReportDetail extends Component {
     let detail = this.props.activeReport;
 
     return (
-      <div>
+      <div id='report-detail' >
         <div>
           <h1>{detail.title}</h1>
         </div>
@@ -21,7 +21,8 @@ class ReportDetail extends Component {
   }
   render() {
     return (
-      <div id="report-detail">{this.renderDetails()}</div>
+      <div id='detail-container' className='content'>{this.renderDetails()}
+      </div>
     );
   }
 }

@@ -1,8 +1,10 @@
-#app {
-  // @import 'foundation-sites/scss/foundation';
-  // // include all modules of foundation
-  // @include foundation-everything;
-  @import 'components/all';    
-  @import 'containers/all';    
-}
+@import 'components/all';
+@import 'containers/all';
 
+#app {
+  min-height: 100vh;
+  min-width: 100vw;
+  position: fixed;
+  margin: 0;
+  padding: 0;  
+}

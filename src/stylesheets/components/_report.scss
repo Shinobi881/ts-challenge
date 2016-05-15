@@ -1,7 +1,11 @@
 .report {
-  display: flex;
+  display: absolute;
+  height: 10%;
+  width: 100%;
   color: #000;
-  border-top-style: solid;
+  // padding: 0;
+  // margin: 0;
+  border-bottom-style: solid;
 }
 
 .report.active {

@@ -16,7 +16,7 @@ class Report extends Component {
         className='report'
         onClick={this.handleClick}
       >
-        <h5>{this.props.title}</h5>
+        <div><h4>{this.props.title}</h4></div>
       </li>
     );
   }

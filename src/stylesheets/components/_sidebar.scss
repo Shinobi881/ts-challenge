@@ -1,21 +1,15 @@
-#side-bar {
-  flex-basis: 30%;
-  height: 100vh;
-  overflow: hidden;
-  overflow-y: auto;
-}
-
-
-//******************************
 // #side-bar {
-//   display: flex;
 //   flex-basis: 30%;
-//   bottom: 0;
-//   top: 0;
-//   min-height: 80vh;
-//   border-right-style: solid;
-//   border-color: black;
+//   height: 100vh;
 //   overflow: hidden;
 //   overflow-y: auto;
 // }
 
+#side-bar {
+  -webkit-flex-basis: 30%;
+      -ms-flex-preferred-size: 30%;
+          flex-basis: 30%;
+  height: 100vh;
+  overflow: hidden;
+  overflow-y: auto;
+}

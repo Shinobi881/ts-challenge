@@ -36,7 +36,7 @@ module.exports = {
   },
   postcss: function (webpack) {
     return [
-      autoprefixer({browsers: ['last 2 versions', 'ie >= 9', 'and_chr >= 2.3']})
+      autoprefixer({ browsers: ['last 2 versions', 'ie >= 9', 'and_chr >= 2.3', 'Firefox >= 20'], flexbox: 'no-2009' })
     ];
   }
 }

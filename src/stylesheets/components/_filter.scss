@@ -1,7 +1,6 @@
 #filter-form {
   width: 300px;
   font-size: 20px;
-  align-self: center;
   height: 30px;
   min-width: 100px;
   max-height: 50px;
@@ -9,6 +8,6 @@
   margin-top: 10px;
 }
 
-::-webkit-input-placeholder {
+::input-placeholder {
    font-size: 20px;
 }

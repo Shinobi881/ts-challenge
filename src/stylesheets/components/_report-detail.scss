@@ -1,9 +1,15 @@
 #detail-container {
   flex-basis: 70%;
+  border-left: solid;
+  height: 100vh;
+  overflow: hidden;
+  overflow-y: auto;
+  
 }
 
 #report-detail {
-  
+  padding: 10px;
+  margin-bottom: 60px;
 }
 
 //*********************************
